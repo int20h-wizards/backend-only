@@ -6,18 +6,21 @@ private String category;
 private String producer;
 private String weight;
 private String resource;
+private String imageUrl;
 public String getPrice() {
 	return price;
 }
 public void setPrice(String price) {
 	this.price = price;
 }
+
 @Override
 public String toString() {
 	return "Croap [price=" + price + ", name=" + name + ", category=" + category + ", producer=" + producer
-			+ ", weight=" + weight + ", resource=" + resource + "]";
+			+ ", weight=" + weight + ", resource=" + resource + ", imageUrl=" + imageUrl + "]";
 }
-public Croap(String price, String name, String category, String producer, String weight, String resource) {
+public Croap(String price, String name, String category, String producer, String weight, String resource,
+		String imageUrl) {
 	super();
 	this.price = price;
 	this.name = name;
@@ -25,6 +28,14 @@ public Croap(String price, String name, String category, String producer, String
 	this.producer = producer;
 	this.weight = weight;
 	this.resource = resource;
+	this.imageUrl = imageUrl;
+}
+
+public String getImageUrl() {
+	return imageUrl;
+}
+public void setImageUrl(String imageUrl) {
+	this.imageUrl = imageUrl;
 }
 public String getName() {
 	return name;

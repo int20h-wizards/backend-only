@@ -36,7 +36,7 @@ public static void buckwheat() throws JSONException, IOException{
 	String buckwheatCategoryHTML="<a href=\"/ua/krupy/c4628397/vid-225787=grechka/\">Гречка</a>";
 	String buckwheatProducerHTML="<a href=\"/ua/krupy/c4628397/strana-proizvoditelj-tovara-90098=544338/\">Україна</a>";
 	String buckwheatWeightHTML="<a href=\"/ua/krupy/c4628397/ves147016=751-g-1000-g/\">1 кг</a>";
-
+	String imgRozUr="https://i2.rozetka.ua/goods/14397645/art_foods_4820191590977_images_14397645953.jpg";
 //Extracting information by function parse() using Jsoup library,arguments of functions is html code and url of page where characteristics is:
 	Document buckwheatPriceDoc=Jsoup.parse(buckwheatPriceHTML, bkwtRozUrl);
 	Document buckwheatNameDoc=Jsoup.parse(buckwheatNameHTML, bkwtRozUrl);
@@ -53,7 +53,7 @@ public static void buckwheat() throws JSONException, IOException{
 	String buckwheatResource= bkwtRozUrl;
 	
 	//Creating object of class Croap to store info and future transfer it to .json file
-	Croap buckwheatRozetka=new Croap(buckwheatPrice, buckwheatName, buckwheatCategory, buckwheatProducer, buckwheatWeight, buckwheatResource);
+	Croap buckwheatRozetka=new Croap(buckwheatPrice, buckwheatName, buckwheatCategory, buckwheatProducer, buckwheatWeight, buckwheatResource,imgRozUr);
 	buckwheats.add(buckwheatRozetka);
 	//Buckwheat Parsing in Epicentre
 	String bkwtEpicUrl="https://epicentrk.ua/shop/krupa-grechnevaya-khutorok-yadritsya-800-g-4820211661410.html?ssh=new&gclid=CjwKCAiAo5qABhBdEiwAOtGmbvlIB8sEwG8FDjHmtRqGPJeAElRmbaMvZVnWFvEFpASheUoa-zZFgRoCPiwQAvD_BwE";
@@ -63,6 +63,7 @@ public static void buckwheat() throws JSONException, IOException{
 	String bkwtEpicCategoryHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/vid-krupa-grechnevaya/\" class=\"link link--blue link--inverted\">крупа гречана</a>";
 	String bkwtEpicProducerHTML="<span class=\"p-char__value\"><span>Україна</span></span>";
 	String bkwtEpicWeightHTML="<span class=\"p-char__value\"><span>800&nbsp;г</span></span>";
+	String imgEpicUrl="https://cdn.27.ua/499/61/c2/2712002_1.jpeg";
 	
 	Document bkwtEpicPriceDoc=Jsoup.parse(bkwtEpicPriceHTML,bkwtEpicUrl);
 	Document bkwtEpicNameDoc=Jsoup.parse(bkwtEpicNameHTML,bkwtEpicUrl);
@@ -77,7 +78,7 @@ public static void buckwheat() throws JSONException, IOException{
 	String bkwtEpicWeight=bkwtEpicWeightDoc.body().text();
 	String bkwtEpicResource=bkwtEpicUrl;
 	
-	Croap buckwheatEpic=new Croap(bkwtEpicPrice, bkwtEpicName, bkwtEpicCategory, bkwtEpicProducer, bkwtEpicWeight,bkwtEpicResource);
+	Croap buckwheatEpic=new Croap(bkwtEpicPrice, bkwtEpicName, bkwtEpicCategory, bkwtEpicProducer, bkwtEpicWeight,bkwtEpicResource,imgEpicUrl);
 	buckwheats.add(buckwheatEpic);
 	
 	String bkwtAquaUrl="https://aquamarket.ua/uk/grechka/10047-khutorok-800-g-krupa-grechana-m-u.html";
@@ -87,6 +88,7 @@ public static void buckwheat() throws JSONException, IOException{
 	String bkwtAquaCategoryHTML="<th colspan=\"2\">ХАРАКТЕРИСТИКИ ХУТОРОК, КРУПА ГРЕЧАНА, СМАЖЕНА, 800 Г</th>";
 	String bkwtAquaProducerHTML="<td>Україна</td>";
 	String bkwtAquaWeightHTML="<td>800</td>";
+	String imgAquaUrl="https://aquamarket.ua/26890-small_default/khutorok-800-g-krupa-grechana-m-u.jpg";
 	
 	Document bkwtAquaPriceDoc=Jsoup.parse(bkwtAquaPriceHTML,bkwtAquaUrl);
 	Document bkwtAquaNameDoc=Jsoup.parse(bkwtAquaNameHTML,bkwtAquaUrl);
@@ -101,7 +103,7 @@ public static void buckwheat() throws JSONException, IOException{
 	String bkwtAquaWeight=bkwtAquaWeightDoc.body().text();
 	String bkwtAquaResource=bkwtAquaUrl;
 	
-	Croap buckwheatAqua=new Croap(bkwtAquaPrice, bkwtAquaName, bkwtAquaCategory, bkwtAquaProducer, bkwtAquaWeight,bkwtAquaResource);
+	Croap buckwheatAqua=new Croap(bkwtAquaPrice, bkwtAquaName, bkwtAquaCategory, bkwtAquaProducer, bkwtAquaWeight,bkwtAquaResource,imgAquaUrl);
 	buckwheats.add(buckwheatAqua);
 	
 	
@@ -111,7 +113,8 @@ public static void buckwheat() throws JSONException, IOException{
 		System.out.println(buckwheat);
 	}
 	*/
-	
+	String imgEpicSecUrl="https://cdn.27.ua/499/3b/2f/1653551_1.jpeg";
+	String imgAquaSecUrl="https://aquamarket.ua/52567-large_default/culinaro-green-buckwheat-grechka-zelena-400-g.jpg";
 	String bkwtEpicSecUrl="https://epicentrk.ua/ua/shop/pervotsvit-grechka-s-belymi-gribami-250-g.html";
 	
 	//Scraping last 2 sort of buckwheats
@@ -134,7 +137,7 @@ public static void buckwheat() throws JSONException, IOException{
 	String bkwtEpicSecProducer=bkwtEpicSecProducerDoc.body().text();
 	String bkwtEpicSecWeight=bkwtEpicSecWeightDoc.body().text();
 	String bkwtEpicSecResource=bkwtEpicSecUrl;
-	Croap bkwtEpicSec=new Croap(bkwtEpicSecPrice, bkwtEpicSecName, bkwtEpicSecCategory, bkwtEpicSecProducer, bkwtEpicSecWeight, bkwtEpicSecResource);
+	Croap bkwtEpicSec=new Croap(bkwtEpicSecPrice, bkwtEpicSecName, bkwtEpicSecCategory, bkwtEpicSecProducer, bkwtEpicSecWeight, bkwtEpicSecResource,imgEpicSecUrl);
 	buckwheats.add(bkwtEpicSec);
 	
 	String bkwtAquaSecUrl="https://aquamarket.ua/uk/grechka/31537-culinaro-green-buckwheat-grechka-zelena-400-g.html";
@@ -157,7 +160,7 @@ public static void buckwheat() throws JSONException, IOException{
 	String bkwtAquaSecProducer=bkwtAquaSecProducerDoc.body().text();
 	String bkwtAquaSecWeight=bkwtAquaSecWeightDoc.body().text();
 	String bkwtAquaSecResource=bkwtAquaSecUrl;
-	Croap bkwtAquaSec=new Croap(bkwtAquaSecPrice, bkwtAquaSecName, bkwtAquaSecCategory, bkwtAquaSecProducer, bkwtAquaSecWeight, bkwtAquaSecResource);
+	Croap bkwtAquaSec=new Croap(bkwtAquaSecPrice, bkwtAquaSecName, bkwtAquaSecCategory, bkwtAquaSecProducer, bkwtAquaSecWeight, bkwtAquaSecResource,imgAquaSecUrl);
 	buckwheats.add(bkwtAquaSec);
 	
 	//Creating JSON object and Json array to store object information
@@ -169,6 +172,7 @@ public static void buckwheat() throws JSONException, IOException{
 	arrayFirst.put("producer: "+buckwheatRozetka.getProducer());
 	arrayFirst.put("weight: "+buckwheatRozetka.getResource());
 	arrayFirst.put("resource: "+bkwtRozUrl);
+	arrayFirst.put("image URL: "+imgRozUr);
 
 	JSONArray arraySecond=new JSONArray();
 	arraySecond.put("price: "+buckwheatEpic.getPrice());
@@ -177,6 +181,7 @@ public static void buckwheat() throws JSONException, IOException{
 	arraySecond.put("producer: "+buckwheatEpic.getProducer());
 	arraySecond.put("weight: "+buckwheatEpic.getResource());
 	arraySecond.put("resource: "+bkwtEpicUrl);
+	arraySecond.put("image URL: "+imgEpicUrl);
 	
 	JSONArray arrayThird=new JSONArray();
 	arrayThird.put("price: "+buckwheatAqua.getPrice());
@@ -185,6 +190,7 @@ public static void buckwheat() throws JSONException, IOException{
 	arrayThird.put("producer: "+buckwheatAqua.getProducer());
 	arrayThird.put("weight: "+buckwheatAqua.getResource());
 	arrayThird.put("resource: "+bkwtAquaSecUrl);
+	arrayThird.put("image URL: "+imgAquaUrl);
 	
 	JSONArray arrayFourth=new JSONArray();
 	arrayFourth.put("price: "+bkwtAquaSec.getPrice());
@@ -193,6 +199,7 @@ public static void buckwheat() throws JSONException, IOException{
 	arrayFourth.put("producer: "+bkwtAquaSec.getProducer());
 	arrayFourth.put("weight: "+bkwtAquaSec.getResource());
 	arrayFourth.put("resource: "+bkwtAquaSecUrl);
+	arrayFourth.put("image URL: "+imgAquaSecUrl);
 	
 	JSONArray arrayFifth=new JSONArray();
 	arrayFifth.put("price: "+bkwtEpicSec.getPrice());
@@ -201,14 +208,14 @@ public static void buckwheat() throws JSONException, IOException{
 	arrayFifth.put("producer: "+bkwtEpicSec.getProducer());
 	arrayFifth.put("weight: "+bkwtEpicSec.getResource());
 	arrayFifth.put("resource: "+bkwtEpicSec);
-	
+	arrayFifth.put("image URL: "+imgEpicSecUrl);
 	
 	
 	bkwtObject.put("buckwheat #5", arrayFifth);
 	bkwtObject.put("buckwheat #4",arrayFourth);
 	bkwtObject.put("buckwheat #3", arrayThird);
 	bkwtObject.put("buckwheat #2", arraySecond);
-	bkwtObject.put("button #1", arrayFirst);
+	bkwtObject.put("buckwheat #1", arrayFirst);
 	
 	//writing information to json file
 	FileWriter fileWriter=new FileWriter("json_buckwheat_info.json");
@@ -220,6 +227,12 @@ public static void buckwheat() throws JSONException, IOException{
 public static void wheat() throws IOException, JSONException{
 	//Wheat Parsing in Rozetka
 		//In process...
+	
+	String imgRozUrl="https://i2.rozetka.ua/goods/2243145/terra_4820015730794_images_2243145258.jpg";
+	String imgAquaUrl="https://aquamarket.ua/8193-small_default/ekorod-400-g-pshenichna-krupa-arnaut.jpg";
+	String imgEpicUrl="https://cdn.27.ua/499/44/df/1721567_1.jpeg";
+	String imgAquaSecUrl="https://aquamarket.ua/62183-small_default/avgust-800-g-krupi-pshenichni-z-tverdikh-sortiv.jpg";
+	String imgEpicSecUrl="https://cdn.27.ua/499/58/6a/1726570_1.jpeg";
 		List<Croap>wheats=new ArrayList<Croap>();
 		String wheatRozetka="https://rozetka.com.ua/ua/terra_4820015730794/p23653956/characteristics/";
 		
@@ -245,7 +258,7 @@ public static void wheat() throws IOException, JSONException{
 		String wheatResource=wheatRozetka;
 		
 	
-		Croap wheatCroap=new Croap(wheatPrice, wheatName, wheatCategory, wheatProducer, wheatWeight, wheatResource);
+		Croap wheatCroap=new Croap(wheatPrice, wheatName, wheatCategory, wheatProducer, wheatWeight, wheatResource,imgRozUrl);
 		
 	String wheatEpicUrl="https://epicentrk.ua/ua/shop/krupa-pshenichnaya-terra-bystrogo-prigotovleniya-400-g.html";
 		
@@ -271,7 +284,7 @@ public static void wheat() throws IOException, JSONException{
 		String whtEpicWeight=whtEpicWeightDoc.body().text();
 		String whtEpicResource=wheatEpicUrl;
 		
-	Croap wheatEpic=new Croap(whtEpicPrice, whtEpicName, whtEpicCategory, whtEpicProducer, whtEpicWeight, whtEpicResource);
+	Croap wheatEpic=new Croap(whtEpicPrice, whtEpicName, whtEpicCategory, whtEpicProducer, whtEpicWeight, whtEpicResource,imgEpicUrl);
 		
 	String whtAquaUrl="https://aquamarket.ua/uk/pshenichna-krupa/2353-ekorod-400-g-pshenichna-krupa-arnaut.html";
 	
@@ -296,7 +309,7 @@ public static void wheat() throws IOException, JSONException{
 	String whtAquaWeight=whtAquaWeightDoc.body().text();
 	String whtAquaResource=wheatEpicUrl;
 	
-Croap wheatAqua=new Croap(whtAquaPrice, whtAquaName, whtAquaCategory, whtAquaProducer, whtAquaWeight, whtAquaResource);
+Croap wheatAqua=new Croap(whtAquaPrice, whtAquaName, whtAquaCategory, whtAquaProducer, whtAquaWeight, whtAquaResource,imgAquaUrl);
 
 String whtEpicSecUrl="https://epicentrk.ua/ua/shop/krupa-pshenichnaya-sto-pudov-artek-dachka-212-g.html";
 
@@ -319,7 +332,7 @@ String whtEpicSecCategory=whtEpicSecCategoryDoc.body().text();
 String whtEpicSecProducer=whtEpicSecProducerDoc.body().text();
 String whtEpicSecWeight=whtEpicSecWeightDoc.body().text();
 String whtEpicSecResource=whtEpicSecUrl;
-Croap whtEpicSec=new Croap(whtEpicSecPrice, whtEpicSecName, whtEpicSecCategory, whtEpicSecProducer, whtEpicSecWeight, whtEpicSecResource);
+Croap whtEpicSec=new Croap(whtEpicSecPrice, whtEpicSecName, whtEpicSecCategory, whtEpicSecProducer, whtEpicSecWeight, whtEpicSecResource,imgEpicSecUrl);
 wheats.add(whtEpicSec);
 
 String whtAquaSecUrl="https://aquamarket.ua/uk/pshenichna-krupa/38683-avgust-800-g-krupi-pshenichni-z-tverdikh-sortiv.html";
@@ -343,7 +356,7 @@ String whtAquaSecCategory=whtAquaSecCategoryDoc.body().text();
 String whtAquaSecProducer=whtAquaSecProducerDoc.body().text();
 String whtAquaSecWeight=whtAquaSecWeightDoc.body().text();
 String whtAquaSecResource=whtAquaSecUrl;
-Croap whtAquaSec=new Croap(whtAquaSecPrice, whtAquaSecName, whtAquaSecCategory, whtAquaSecProducer, whtAquaSecWeight, whtAquaSecResource);
+Croap whtAquaSec=new Croap(whtAquaSecPrice, whtAquaSecName, whtAquaSecCategory, whtAquaSecProducer, whtAquaSecWeight, whtAquaSecResource,imgAquaSecUrl);
 wheats.add(whtAquaSec);
 
 
@@ -391,6 +404,14 @@ wheats.add(whtAquaSec);
 		arrayFifth.put("producer: "+whtAquaSec.getProducer());
 		arrayFifth.put("weight: "+whtAquaSec.getWeight());
 		arrayFifth.put("resource: "+whtAquaSecUrl);
+		
+		arrayFirst.put("image URL: "+imgAquaSecUrl);
+		arraySecond.put("image URL: "+imgAquaSecUrl);
+		arrayThird.put("image URL: "+imgAquaSecUrl);
+		arrayFourth.put("image URL: "+imgAquaSecUrl);
+		arrayFifth.put("image URL: "+imgAquaSecUrl);
+		
+		
 		wheatJSON.put("wheat #5", arrayFifth);
 		
 		FileWriter fileWriter=new FileWriter("json_wheat_info.json");
@@ -404,7 +425,11 @@ wheats.add(whtAquaSec);
 }
 public static void corn() throws JSONException, IOException {
 	List<Croap>corns=new ArrayList<Croap>();
-	
+	String imgRozUrl="https://i8.rozetka.ua/goods/14397645/art_foods_4820191590892_images_14397645428.jpg";
+	String imgAquaUrl="https://aquamarket.ua/62180-small_default/avgust-800-g-krupa-kukurudzyana.jpg";
+	String imgEpicUrl="https://cdn.27.ua/499/44/dd/1721565_1.jpeg";
+	String imgAquaSecUrl="https://aquamarket.ua/59771-small_default/skviryanka-800-g-krupa-kukurudzyana-shlifovana.jpg";
+	String imgEpicSecUrl="https://cdn.27.ua/499/7f/f5/1540085_1.jpeg";
 	String cornEpicUrl="https://epicentrk.ua/ua/shop/krupa-kukuruznaya-terra-shlifovannaya-bystrogo-prigotovleniya-400-g.html";
 	String cornRozUrl="https://rozetka.com.ua/ua/art_foods_4820191590892/p47649056/characteristics/"; 
 	String cornAquaUrl="https://aquamarket.ua/uk/kukurudzyana-krupa/38684-avgust-800-g-krupa-kukurudzyana.html";
@@ -458,7 +483,7 @@ public static void corn() throws JSONException, IOException {
 	String cornEpicProducer=cornEpicProducerDoc.body().text();
 	String cornEpicWeight=cornEpicWeightDoc.body().text();
 	
-	Croap cornEpic=new Croap(cornEpicPrice, cornEpicName, cornEpicCategory, cornEpicProducer, cornEpicWeight, cornEpicResourceHTML);
+	Croap cornEpic=new Croap(cornEpicPrice, cornEpicName, cornEpicCategory, cornEpicProducer, cornEpicWeight, cornEpicResourceHTML,imgEpicUrl);
 	corns.add(cornEpic);
 	
 	String cornRozPrice=cornRozPriceDoc.body().text();
@@ -466,7 +491,7 @@ public static void corn() throws JSONException, IOException {
 	String cornRozCategory=cornRozCategoryDoc.body().text();
 	String cornRozProducer=cornRozProducerDoc.body().text();
 	String cornRozWeight=cornRozWeightDoc.body().text();
-	Croap cornRoz=new Croap(cornRozPrice, cornRozName, cornRozCategory, cornRozProducer, cornRozWeight, cornRozResourceHTML);
+	Croap cornRoz=new Croap(cornRozPrice, cornRozName, cornRozCategory, cornRozProducer, cornRozWeight, cornRozResourceHTML,imgRozUrl);
 	corns.add(cornRoz);
 	 
 	String cornAquaPrice=cornAquaPriceDoc.body().text();
@@ -474,7 +499,7 @@ public static void corn() throws JSONException, IOException {
 	String cornAquaCategory=cornAquaCategoryDoc.body().text();
 	String cornAquaProducer=cornAquaProducerDoc.body().text();
 	String cornAquaWeight=cornAquaWeightDoc.body().text();
-	Croap cornAqua=new Croap(cornAquaPrice, cornAquaName, cornAquaCategory, cornAquaProducer, cornAquaWeight, cornAquaResourceHTML);
+	Croap cornAqua=new Croap(cornAquaPrice, cornAquaName, cornAquaCategory, cornAquaProducer, cornAquaWeight, cornAquaResourceHTML,imgAquaUrl);
 	corns.add(cornAqua);
 	
 	
@@ -499,7 +524,7 @@ public static void corn() throws JSONException, IOException {
 	String cornEpicSecProducer=cornEpicSecProducerDoc.body().text();
 	String cornEpicSecWeight=cornEpicSecWeightDoc.body().text();
 	String cornEpicSecResource=cornEpicSecUrl;
-	Croap cornEpicSec=new Croap(cornEpicSecPrice, cornEpicSecName, cornEpicSecCategory, cornEpicSecProducer, cornEpicSecWeight, cornEpicSecResource);
+	Croap cornEpicSec=new Croap(cornEpicSecPrice, cornEpicSecName, cornEpicSecCategory, cornEpicSecProducer, cornEpicSecWeight, cornEpicSecResource,imgEpicSecUrl);
 	corns.add(cornEpicSec);
 
 	String cornAquaSecUrl="https://aquamarket.ua/uk/kukurudzyana-krupa/37061-skviryanka-800-g-krupa-kukurudzyana-shlifovana.html";
@@ -523,7 +548,7 @@ public static void corn() throws JSONException, IOException {
 	String cornAquaSecProducer=cornAquaSecProducerDoc.body().text();
 	String cornAquaSecWeight=cornAquaSecWeightDoc.body().text();
 	String cornAquaSecResource=cornAquaSecUrl;
-	Croap cornAquaSec=new Croap(cornAquaSecPrice, cornAquaSecName, cornAquaSecCategory, cornAquaSecProducer, cornAquaSecWeight, cornAquaSecResource);
+	Croap cornAquaSec=new Croap(cornAquaSecPrice, cornAquaSecName, cornAquaSecCategory, cornAquaSecProducer, cornAquaSecWeight, cornAquaSecResource,imgAquaSecUrl);
 	corns.add(cornAquaSec);
 	
 	JSONObject cornJson=new JSONObject();
@@ -571,6 +596,12 @@ public static void corn() throws JSONException, IOException {
 	arrayFifth.put("producer: "+cornAquaSec.getProducer());
 	arrayFifth.put("weight: "+cornAquaSec.getWeight());
 	arrayFifth.put("resource: "+cornAquaResourceHTML);
+	arrayFirst.put("image URL: "+imgAquaSecUrl);
+	arraySecond.put("image URL: "+imgAquaSecUrl);
+	arrayThird.put("image URL: "+imgAquaSecUrl);
+	arrayFourth.put("image URL: "+imgAquaSecUrl);
+	arrayFifth.put("image URL: "+imgAquaSecUrl);
+	
 	cornJson.put("corn #5", arrayFifth);
 	
 	System.out.println("JSON file with corn info:"+cornJson);
@@ -580,7 +611,11 @@ public static void corn() throws JSONException, IOException {
 	}
 public static void rice() throws JSONException, IOException {
 	List<Croap>rice=new ArrayList<Croap>();
-	
+	String imgRozUrl="https://i2.rozetka.ua/goods/6132257/copy_pere_4820191590496_5b59df1b374db_images_6132257896.jpg";
+	String imgAquaUrl="https://aquamarket.ua/32374-small_default/ris-scotti-skotti-arborio-dlya-rizotto-500-g.jpg";
+	String imgEpicUrl="https://cdn.27.ua/499/61/c4/2712004_2.jpeg";
+	String imgAquaSecUrl="https://aquamarket.ua/22411-small_default/avgust-500-g-ris-basmati.jpg";
+	String imgEpicSecUrl="https://cdn.27.ua/499/58/80/1726592_1.jpeg";
 	String riceEpicUrl="https://epicentrk.ua/ua/shop/ris-khutorok-dlinnyy-shlifovannyy-800-g-4820211660161.html";
 	String riceRozUrl="https://rozetka.com.ua/ua/pere_4820191590472/p47561880/characteristics/"; 
 	String riceAquaUrl="https://aquamarket.ua/uk/ris/14890-ris-scotti-skotti-arborio-dlya-rizotto-500-g.html";
@@ -635,7 +670,7 @@ public static void rice() throws JSONException, IOException {
 	String riceEpicProducer=riceEpicProducerDoc.body().text();
 	String riceEpicWeight=riceEpicWeightDoc.body().text();
 	
-	Croap riceEpic=new Croap(riceEpicPrice, riceEpicName, riceEpicCategory, riceEpicProducer, riceEpicWeight, riceEpicResourceHTML);
+	Croap riceEpic=new Croap(riceEpicPrice, riceEpicName, riceEpicCategory, riceEpicProducer, riceEpicWeight, riceEpicResourceHTML,imgEpicUrl);
 	rice.add(riceEpic);
 	
 	String riceRozPrice=riceRozPriceDoc.body().text();
@@ -643,7 +678,7 @@ public static void rice() throws JSONException, IOException {
 	String riceRozCategory=riceRozCategoryDoc.body().text();
 	String riceRozProducer=riceRozProducerDoc.body().text();
 	String riceRozWeight=riceRozWeightDoc.body().text();
-	Croap riceRoz=new Croap(riceRozPrice, riceRozName, riceRozCategory, riceRozProducer, riceRozWeight, riceRozResourceHTML);
+	Croap riceRoz=new Croap(riceRozPrice, riceRozName, riceRozCategory, riceRozProducer, riceRozWeight, riceRozResourceHTML,imgRozUrl);
 	rice.add(riceRoz);
 	 
 	String riceAquaPrice=riceAquaPriceDoc.body().text();
@@ -651,7 +686,7 @@ public static void rice() throws JSONException, IOException {
 	String riceAquaCategory=riceAquaCategoryDoc.body().text();
 	String riceAquaProducer=riceAquaProducerDoc.body().text();
 	String riceAquaWeight=riceAquaWeightDoc.body().text();
-	Croap riceAqua=new Croap(riceAquaPrice, riceAquaName, riceAquaCategory, riceAquaProducer, riceAquaWeight, riceAquaResourceHTML);
+	Croap riceAqua=new Croap(riceAquaPrice, riceAquaName, riceAquaCategory, riceAquaProducer, riceAquaWeight, riceAquaResourceHTML,imgAquaUrl);
 	rice.add(riceAqua);
 	
 	
@@ -676,7 +711,7 @@ public static void rice() throws JSONException, IOException {
 	String riceEpicSecProducer=riceEpicSecProducerDoc.body().text();
 	String riceEpicSecWeight=riceEpicSecWeightDoc.body().text();
 	String riceEpicSecResource=riceEpicSecUrl;
-	Croap riceEpicSec=new Croap(riceEpicSecPrice, riceEpicSecName, riceEpicSecCategory, riceEpicSecProducer, riceEpicSecWeight, riceEpicSecResource);
+	Croap riceEpicSec=new Croap(riceEpicSecPrice, riceEpicSecName, riceEpicSecCategory, riceEpicSecProducer, riceEpicSecWeight, riceEpicSecResource,imgEpicSecUrl);
 	rice.add(riceEpicSec);
 
 	String riceAquaSecUrl="https://aquamarket.ua/uk/ris/6737-avgust-500-g-ris-basmati.html";
@@ -700,7 +735,7 @@ public static void rice() throws JSONException, IOException {
 	String riceAquaSecProducer=riceAquaSecProducerDoc.body().text();
 	String riceAquaSecWeight=riceAquaSecWeightDoc.body().text();
 	String riceAquaSecResource=riceAquaSecUrl;
-	Croap riceAquaSec=new Croap(riceAquaSecPrice, riceAquaSecName, riceAquaSecCategory, riceAquaSecProducer, riceAquaSecWeight, riceAquaSecResource);
+	Croap riceAquaSec=new Croap(riceAquaSecPrice, riceAquaSecName, riceAquaSecCategory, riceAquaSecProducer, riceAquaSecWeight, riceAquaSecResource,imgAquaSecUrl);
 	rice.add(riceAquaSec);
 	
 
@@ -749,6 +784,13 @@ public static void rice() throws JSONException, IOException {
 	arrayFifth.put("producer: "+riceEpicSec.getProducer());
 	arrayFifth.put("weight: "+riceEpicSec.getWeight());
 	arrayFifth.put("resource: "+riceEpicSecResource);
+	
+	arrayFirst.put("image URL: "+imgAquaSecUrl);
+	arraySecond.put("image URL: "+imgAquaSecUrl);
+	arrayThird.put("image URL: "+imgAquaSecUrl);
+	arrayFourth.put("image URL: "+imgAquaSecUrl);
+	arrayFifth.put("image URL: "+imgAquaSecUrl);
+	
 	riceJson.put("rice #5", arrayFifth);
 	
 	System.out.println("JSON file with rice info:"+riceJson);
@@ -758,7 +800,11 @@ public static void rice() throws JSONException, IOException {
 }
 public static void barley() throws JSONException, IOException {
 	List<Croap>barleys=new ArrayList<Croap>();
-	
+	String imgRozUrl="https://i2.rozetka.ua/goods/18253364/82804665_images_18253364569.jpg";
+	String imgAquaUrl="https://aquamarket.ua/62182-small_default/avgust-800-g-krupa-yachna.jpg";
+	String imgEpicUrl="https://cdn.27.ua/499/32/71/1520241_2.jpeg";
+	String imgAquaSecUrl="https://aquamarket.ua/71202-small_default/kozub-500-g-krupa-yachna-organichna.jpg";
+	String imgEpicSecUrl="https://cdn.27.ua/499/44/e5/1721573_1.jpeg";
 	String barleyEpicUrl="https://epicentrk.ua/ua/shop/krupa-yachnevaya-foodsi-1000-g.html";
 	String barleyRozUrl="https://rozetka.com.ua/ua/82804665/p82804665/characteristics/"; 
 	String barleyAquaUrl="https://aquamarket.ua/uk/yachna-krupa/38682-avgust-800-g-krupa-yachna.html";
@@ -813,7 +859,7 @@ public static void barley() throws JSONException, IOException {
 	String barleyEpicProducer=barleyEpicProducerDoc.body().text();
 	String barleyEpicWeight=barleyEpicWeightDoc.body().text();
 	
-	Croap berleyEpic=new Croap(barleyEpicPrice, barleyEpicName, barleyEpicCategory, barleyEpicProducer, barleyEpicWeight, barleyEpicResourceHTML);
+	Croap berleyEpic=new Croap(barleyEpicPrice, barleyEpicName, barleyEpicCategory, barleyEpicProducer, barleyEpicWeight, barleyEpicResourceHTML,imgEpicUrl);
 	barleys.add(berleyEpic);
 	
 	String barleyRozPrice=barleyRozPriceDoc.body().text();
@@ -821,7 +867,7 @@ public static void barley() throws JSONException, IOException {
 	String barleyRozCategory=barleyRozCategoryDoc.body().text();
 	String barleyRozProducer=barleyRozProducerDoc.body().text();
 	String barleyRozWeight=barleyRozWeightDoc.body().text();
-	Croap barleyRoz=new Croap(barleyRozPrice, barleyRozName, barleyRozCategory, barleyRozProducer, barleyRozWeight, barleyRozResourceHTML);
+	Croap barleyRoz=new Croap(barleyRozPrice, barleyRozName, barleyRozCategory, barleyRozProducer, barleyRozWeight, barleyRozResourceHTML,imgRozUrl);
 	barleys.add(barleyRoz);
 	 
 	String barleyAquaPrice=barleyAquaPriceDoc.body().text();
@@ -829,7 +875,7 @@ public static void barley() throws JSONException, IOException {
 	String barleyAquaCategory=barleyAquaCategoryDoc.body().text();
 	String barleyAquaProducer=barleyAquaProducerDoc.body().text();
 	String barleyAquaWeight=barleyAquaWeightDoc.body().text();
-	Croap barleyAqua=new Croap(barleyAquaPrice, barleyAquaName, barleyAquaCategory, barleyAquaProducer, barleyAquaWeight, barleyAquaResourceHTML);
+	Croap barleyAqua=new Croap(barleyAquaPrice, barleyAquaName, barleyAquaCategory, barleyAquaProducer, barleyAquaWeight, barleyAquaResourceHTML,imgAquaUrl);
 	barleys.add(barleyAqua);
 	
 	
@@ -854,7 +900,7 @@ public static void barley() throws JSONException, IOException {
 	String barleyEpicSecProducer=barleyEpicSecProducerDoc.body().text();
 	String barleyEpicSecWeight=barleyEpicSecWeightDoc.body().text();
 	String barleyEpicSecResource=barleyEpicSecUrl;
-	Croap barleyEpicSec=new Croap(barleyEpicSecPrice, barleyEpicSecName, barleyEpicSecCategory, barleyEpicSecProducer, barleyEpicSecWeight, barleyEpicSecResource);
+	Croap barleyEpicSec=new Croap(barleyEpicSecPrice, barleyEpicSecName, barleyEpicSecCategory, barleyEpicSecProducer, barleyEpicSecWeight, barleyEpicSecResource,imgEpicSecUrl);
 	barleys.add(barleyEpicSec);
 
 	String barleyAquaSecUrl="https://aquamarket.ua/uk/yachna-krupa/44800-kozub-500-g-krupa-yachna-organichna.html";
@@ -878,7 +924,7 @@ public static void barley() throws JSONException, IOException {
 	String barleyAquaSecProducer=barleyAquaSecProducerDoc.body().text();
 	String barleyAquaSecWeight=barleyAquaSecWeightDoc.body().text();
 	String barleyAquaSecResource=barleyAquaSecUrl;
-	Croap barleyAquaSec=new Croap(barleyAquaSecPrice, barleyAquaSecName, barleyAquaSecCategory, barleyAquaSecProducer, barleyAquaSecWeight, barleyAquaSecResource);
+	Croap barleyAquaSec=new Croap(barleyAquaSecPrice, barleyAquaSecName, barleyAquaSecCategory, barleyAquaSecProducer, barleyAquaSecWeight, barleyAquaSecResource,imgAquaSecUrl);
 	barleys.add(barleyAquaSec);
 	
 	
@@ -929,6 +975,12 @@ public static void barley() throws JSONException, IOException {
 	arrayFifth.put("producer: "+barleyEpicSec.getProducer());
 	arrayFifth.put("weight: "+barleyEpicSec.getWeight());
 	arrayFifth.put("resource: "+barleyEpicSecResource);
+	arrayFirst.put("image URL: "+imgAquaSecUrl);
+	arraySecond.put("image URL: "+imgAquaSecUrl);
+	arrayThird.put("image URL: "+imgAquaSecUrl);
+	arrayFourth.put("image URL: "+imgAquaSecUrl);
+	arrayFifth.put("image URL: "+imgAquaSecUrl);
+	
 	barleyJson.put("barley #5", arrayFifth);
 	
 	System.out.println("JSON file with barley info:"+barleyJson);
