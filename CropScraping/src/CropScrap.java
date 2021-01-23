@@ -204,11 +204,11 @@ public static void buckwheat() throws JSONException, IOException{
 	
 	
 	
-	bkwtObject.put("buckwheat #5", arrayFifth);
-	bkwtObject.put("buckwheat #4",arrayFourth);
-	bkwtObject.put("buckwheat #3", arrayThird);
-	bkwtObject.put("buckwheat #2", arraySecond);
-	bkwtObject.put("button #1", arrayFirst);
+	bkwtObject.put("buckwheat #5", bkwtAquaSec);
+	bkwtObject.put("buckwheat #4", buckwheatAqua);
+	bkwtObject.put("buckwheat #3", buckwheatEpic);
+	bkwtObject.put("buckwheat #2", buckwheatRozetka);
+	bkwtObject.put("buckwheat #1", bkwtEpicSec);
 	
 	//writing information to json file
 	FileWriter fileWriter=new FileWriter("json_buckwheat_info.json");
@@ -355,7 +355,7 @@ wheats.add(whtAquaSec);
 		arrayFirst.put("producer: "+wheatCroap.getProducer());
 		arrayFirst.put("weight: "+wheatCroap.getWeight());
 		arrayFirst.put("resource: "+wheatRozetka);
-		wheatJSON.put("wheat #1", arrayFirst);
+		
 		
 		JSONArray arraySecond=new JSONArray();
 		arraySecond.put("price: "+wheatEpic.getPrice());
@@ -364,7 +364,7 @@ wheats.add(whtAquaSec);
 		arraySecond.put("producer: "+wheatEpic.getProducer());
 		arraySecond.put("weight: "+wheatEpic.getWeight());
 		arraySecond.put("resource: "+wheatEpicUrl);
-		wheatJSON.put("wheat #2", arraySecond);
+	
 		
 		JSONArray arrayThird=new JSONArray();
 		arrayThird.put("price: "+wheatAqua.getPrice());
@@ -373,7 +373,7 @@ wheats.add(whtAquaSec);
 		arrayThird.put("producer: "+wheatAqua.getProducer());
 		arrayThird.put("weight: "+wheatAqua.getWeight());
 		arrayThird.put("resource: "+whtAquaUrl);
-		wheatJSON.put("wheat #3", arrayThird);
+	
 		
 		JSONArray arrayFourth=new JSONArray();
 		arrayFourth.put("price: "+whtEpicSec.getPrice());
@@ -382,7 +382,7 @@ wheats.add(whtAquaSec);
 		arrayFourth.put("producer: "+whtEpicSec.getProducer());
 		arrayFourth.put("weight: "+whtEpicSec.getWeight());
 		arrayFourth.put("resource: "+whtEpicSecUrl);
-		wheatJSON.put("wheat #4", arrayFourth);
+		
 		
 		JSONArray arrayFifth=new JSONArray();
 		arrayFifth.put("price: "+whtAquaSec.getPrice());
@@ -391,7 +391,12 @@ wheats.add(whtAquaSec);
 		arrayFifth.put("producer: "+whtAquaSec.getProducer());
 		arrayFifth.put("weight: "+whtAquaSec.getWeight());
 		arrayFifth.put("resource: "+whtAquaSecUrl);
-		wheatJSON.put("wheat #5", arrayFifth);
+		
+		wheatJSON.put("wheat #1", whtAquaSec);
+		wheatJSON.put("wheat #2", wheatAqua);
+		wheatJSON.put("wheat #3", wheatEpic);
+		wheatJSON.put("wheat #4", whtEpicSec);
+		wheatJSON.put("wheat #5", wheatCroap);
 		
 		FileWriter fileWriter=new FileWriter("json_wheat_info.json");
 		fileWriter.write(wheatJSON.toString());
@@ -535,7 +540,7 @@ public static void corn() throws JSONException, IOException {
 	arrayFirst.put("producer: "+cornRoz.getProducer());
 	arrayFirst.put("weight: "+cornRoz.getWeight());
 	arrayFirst.put("resource: "+cornRozResourceHTML);
-	cornJson.put("corn #1", arrayFirst);
+
 	
 	JSONArray arraySecond=new JSONArray();
 	arraySecond.put("price: "+cornEpic.getPrice());
@@ -544,7 +549,7 @@ public static void corn() throws JSONException, IOException {
 	arraySecond.put("producer: "+cornEpic.getProducer());
 	arraySecond.put("weight: "+cornEpic.getWeight());
 	arraySecond.put("resource: "+cornEpicResourceHTML);
-	cornJson.put("corn #2", arraySecond);
+	
 	
 	JSONArray arrayThird=new JSONArray();
 	arrayThird.put("price: "+cornAqua.getPrice());
@@ -553,7 +558,7 @@ public static void corn() throws JSONException, IOException {
 	arrayThird.put("producer: "+cornAqua.getProducer());
 	arrayThird.put("weight: "+cornAqua.getWeight());
 	arrayThird.put("resource: "+cornAquaResourceHTML);
-	cornJson.put("corn #3", arrayThird);
+	
 	
 	JSONArray arrayFourth=new JSONArray();
 	arrayFourth.put("price: "+cornEpicSec.getPrice());
@@ -562,7 +567,7 @@ public static void corn() throws JSONException, IOException {
 	arrayFourth.put("producer: "+cornEpicSec.getProducer());
 	arrayFourth.put("weight: "+cornEpicSec.getWeight());
 	arrayFourth.put("resource: "+cornEpicResourceHTML);
-	cornJson.put("corn #4", arrayFourth);
+	
 	
 	JSONArray arrayFifth=new JSONArray();
 	arrayFifth.put("price: "+cornAquaSec.getPrice());
@@ -571,7 +576,11 @@ public static void corn() throws JSONException, IOException {
 	arrayFifth.put("producer: "+cornAquaSec.getProducer());
 	arrayFifth.put("weight: "+cornAquaSec.getWeight());
 	arrayFifth.put("resource: "+cornAquaResourceHTML);
-	cornJson.put("corn #5", arrayFifth);
+	cornJson.put("corn #1", cornAqua);
+	cornJson.put("corn #2", cornRoz);
+	cornJson.put("corn #3", cornAquaSec);
+	cornJson.put("corn #4", cornEpicSec);
+	cornJson.put("corn #5", cornEpic);
 	
 	System.out.println("JSON file with corn info:"+cornJson);
 	FileWriter fileWriter=new FileWriter("json_corn_info.json");
@@ -713,7 +722,7 @@ public static void rice() throws JSONException, IOException {
 	arrayFirst.put("producer: "+riceRoz.getProducer());
 	arrayFirst.put("weight: "+riceRoz.getWeight());
 	arrayFirst.put("resource: "+riceRozResourceHTML);
-	riceJson.put("rice #1", arrayFirst);
+	
 	
 	JSONArray arraySecond=new JSONArray();
 	arraySecond.put("price: "+riceEpic.getPrice());
@@ -722,7 +731,7 @@ public static void rice() throws JSONException, IOException {
 	arraySecond.put("producer: "+riceEpic.getProducer());
 	arraySecond.put("weight: "+riceEpic.getWeight());
 	arraySecond.put("resource: "+riceEpicResourceHTML);
-	riceJson.put("rice #2", arraySecond);
+	
 	
 	JSONArray arrayThird=new JSONArray();
 	arrayThird.put("price: "+riceAqua.getPrice());
@@ -731,7 +740,7 @@ public static void rice() throws JSONException, IOException {
 	arrayThird.put("producer: "+riceAqua.getProducer());
 	arrayThird.put("weight: "+riceAqua.getWeight());
 	arrayThird.put("resource: "+riceAquaResourceHTML);
-	riceJson.put("rice #3", arrayThird);
+	
 	
 	JSONArray arrayFourth=new JSONArray();
 	arrayFourth.put("price: "+riceAquaSec.getPrice());
@@ -740,7 +749,7 @@ public static void rice() throws JSONException, IOException {
 	arrayFourth.put("producer: "+riceAquaSec.getProducer());
 	arrayFourth.put("weight: "+riceAquaSec.getWeight());
 	arrayFourth.put("resource: "+riceAquaSecResource);
-	riceJson.put("rice #4", arrayFourth);
+	
 	
 	JSONArray arrayFifth=new JSONArray();
 	arrayFifth.put("price: "+riceEpicSec.getPrice());
@@ -749,7 +758,11 @@ public static void rice() throws JSONException, IOException {
 	arrayFifth.put("producer: "+riceEpicSec.getProducer());
 	arrayFifth.put("weight: "+riceEpicSec.getWeight());
 	arrayFifth.put("resource: "+riceEpicSecResource);
-	riceJson.put("rice #5", arrayFifth);
+	riceJson.put("rice #1", riceAqua);
+	riceJson.put("rice #2", riceAquaSec);
+	riceJson.put("rice #3", riceEpic);
+	riceJson.put("rice #4", riceEpicSec);
+	riceJson.put("rice #5", riceRoz);
 	
 	System.out.println("JSON file with rice info:"+riceJson);
 	FileWriter fileWriter=new FileWriter("json_rice_info.json");
@@ -893,7 +906,7 @@ public static void barley() throws JSONException, IOException {
 	arrayFirst.put("producer: "+barleyRoz.getProducer());
 	arrayFirst.put("weight: "+barleyRoz.getWeight());
 	arrayFirst.put("resource: "+barleyRozResourceHTML);
-	barleyJson.put("barley #1", arrayFirst);
+	
 	
 	JSONArray arraySecond=new JSONArray();
 	arraySecond.put("price: "+berleyEpic.getPrice());
@@ -902,7 +915,7 @@ public static void barley() throws JSONException, IOException {
 	arraySecond.put("producer: "+berleyEpic.getProducer());
 	arraySecond.put("weight: "+berleyEpic.getWeight());
 	arraySecond.put("resource: "+barleyEpicResourceHTML);
-	barleyJson.put("barley #2", arraySecond);
+
 	
 	JSONArray arrayThird=new JSONArray();
 	arrayThird.put("price: "+barleyAqua.getPrice());
@@ -911,7 +924,7 @@ public static void barley() throws JSONException, IOException {
 	arrayThird.put("producer: "+barleyAqua.getProducer());
 	arrayThird.put("weight: "+barleyAqua.getWeight());
 	arrayThird.put("resource: "+barleyAquaResourceHTML);
-	barleyJson.put("barley #3", arrayThird);
+
 	
 	JSONArray arrayFourth=new JSONArray();
 	arrayFourth.put("price: "+barleyAquaSec.getPrice());
@@ -920,7 +933,7 @@ public static void barley() throws JSONException, IOException {
 	arrayFourth.put("producer: "+barleyAquaSec.getProducer());
 	arrayFourth.put("weight: "+barleyAquaSec.getWeight());
 	arrayFourth.put("resource: "+barleyAquaSecResource);
-	barleyJson.put("barley #4", arrayFourth);
+
 	
 	JSONArray arrayFifth=new JSONArray();
 	arrayFifth.put("price: "+barleyEpicSec.getPrice());
@@ -929,7 +942,11 @@ public static void barley() throws JSONException, IOException {
 	arrayFifth.put("producer: "+barleyEpicSec.getProducer());
 	arrayFifth.put("weight: "+barleyEpicSec.getWeight());
 	arrayFifth.put("resource: "+barleyEpicSecResource);
-	barleyJson.put("barley #5", arrayFifth);
+	barleyJson.put("barley #1", barleyAqua);
+	barleyJson.put("barley #2", barleyAquaSec);
+	barleyJson.put("barley #3", barleyEpicSec);
+	barleyJson.put("barley #4", berleyEpic);
+	barleyJson.put("barley #5", barleyRoz);
 	
 	System.out.println("JSON file with barley info:"+barleyJson);
 	FileWriter fileWriter=new FileWriter("json_barley_info.json");
