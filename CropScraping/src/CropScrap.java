@@ -405,10 +405,10 @@ wheats.add(whtAquaSec);
 		arrayFifth.put("weight: "+whtAquaSec.getWeight());
 		arrayFifth.put("resource: "+whtAquaSecUrl);
 		
-		arrayFirst.put("image URL: "+imgAquaSecUrl);
-		arraySecond.put("image URL: "+imgAquaSecUrl);
-		arrayThird.put("image URL: "+imgAquaSecUrl);
-		arrayFourth.put("image URL: "+imgAquaSecUrl);
+		arrayFirst.put("image URL: "+imgRozUrl);
+		arraySecond.put("image URL: "+imgEpicUrl);
+		arrayThird.put("image URL: "+imgAquaUrl);
+		arrayFourth.put("image URL: "+imgEpicSecUrl);
 		arrayFifth.put("image URL: "+imgAquaSecUrl);
 		
 		
@@ -449,7 +449,7 @@ public static void corn() throws JSONException, IOException {
 	String cornRozWeightHTML="<a href=\"/ua/krupy/c4628397/ves147016=501-g-750-g/\">500 г</a>";
 	String cornRozResourceHTML=cornRozUrl;
 	
-	String cornAquaPriceHTML="<div class=\"product-price\">15<sup>90</sup>";
+	String cornAquaPriceHTML="<div class=\"product-price\">15<sup>";
 	String cornAquaNameHTML="<td>Август</td>";
 	String cornAquaCategoryHTML="<td>Кукурудзяна</td>";
 	String cornAquaProducerHTML="<td>Україна</td>";
@@ -596,14 +596,13 @@ public static void corn() throws JSONException, IOException {
 	arrayFifth.put("producer: "+cornAquaSec.getProducer());
 	arrayFifth.put("weight: "+cornAquaSec.getWeight());
 	arrayFifth.put("resource: "+cornAquaResourceHTML);
-	arrayFirst.put("image URL: "+imgAquaSecUrl);
-	arraySecond.put("image URL: "+imgAquaSecUrl);
-	arrayThird.put("image URL: "+imgAquaSecUrl);
-	arrayFourth.put("image URL: "+imgAquaSecUrl);
+	arrayFirst.put("image URL: "+imgRozUrl);
+	arraySecond.put("image URL: "+imgEpicUrl);
+	arrayThird.put("image URL: "+imgAquaUrl);
+	arrayFourth.put("image URL: "+imgEpicSecUrl);
 	arrayFifth.put("image URL: "+imgAquaSecUrl);
 	
 	cornJson.put("corn #5", arrayFifth);
-	
 	System.out.println("JSON file with corn info:"+cornJson);
 	FileWriter fileWriter=new FileWriter("json_corn_info.json");
 	fileWriter.write(cornJson.toString());
