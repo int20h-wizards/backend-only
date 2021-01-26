@@ -192,7 +192,7 @@ public static void buckwheat() throws  IOException, JSONException{
 	arrayThird.put("category: "+buckwheatAqua.getCategory());
 	arrayThird.put("producer: "+buckwheatAqua.getProducer());
 	arrayThird.put("weight: "+buckwheatAqua.getWeight());
-	arrayThird.put("resource: "+bkwtAquaSecUrl);
+	arrayThird.put("resource: "+bkwtAquaUrl);
 	arrayThird.put("image URL: "+imgAquaUrl);
 	
 	JSONArray arrayFourth=new JSONArray();
@@ -789,11 +789,11 @@ public static void rice() throws JSONException, IOException {
 	arrayFifth.put("weight: "+riceEpicSec.getWeight());
 	arrayFifth.put("resource: "+riceEpicSecResource);
 	
-	arrayFirst.put("image URL: "+imgAquaSecUrl);
-	arraySecond.put("image URL: "+imgAquaSecUrl);
-	arrayThird.put("image URL: "+imgAquaSecUrl);
+	arrayFirst.put("image URL: "+imgRozUrl);
+	arraySecond.put("image URL: "+imgEpicUrl);
+	arrayThird.put("image URL: "+imgAquaUrl);
 	arrayFourth.put("image URL: "+imgAquaSecUrl);
-	arrayFifth.put("image URL: "+imgAquaSecUrl);
+	arrayFifth.put("image URL: "+imgEpicSecUrl);
 	
 	riceJson.put("rice #5", arrayFifth);
 	
@@ -979,11 +979,12 @@ public static void barley() throws JSONException, IOException {
 	arrayFifth.put("producer: "+barleyEpicSec.getProducer());
 	arrayFifth.put("weight: "+barleyEpicSec.getWeight());
 	arrayFifth.put("resource: "+barleyEpicSecResource);
-	arrayFirst.put("image URL: "+imgAquaSecUrl);
-	arraySecond.put("image URL: "+imgAquaSecUrl);
-	arrayThird.put("image URL: "+imgAquaSecUrl);
+	
+	arrayFirst.put("image URL: "+imgRozUrl);
+	arraySecond.put("image URL: "+imgEpicUrl);
+	arrayThird.put("image URL: "+imgAquaUrl);
 	arrayFourth.put("image URL: "+imgAquaSecUrl);
-	arrayFifth.put("image URL: "+imgAquaSecUrl);
+	arrayFifth.put("image URL: "+imgEpicSecUrl);
 	
 	barleyJson.put("barley #5", arrayFifth);
 	
