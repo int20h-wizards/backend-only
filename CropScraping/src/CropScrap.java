@@ -23,7 +23,7 @@ System.out.println();
 barley();
 }
 
-public static void buckwheat() throws JSONException, IOException{
+public static void buckwheat() throws  IOException, JSONException{
 	List<Croap>buckwheats=new ArrayList<Croap>();
 	//bkwt stands for buckwheat
 	//Buckwheat Parsing in Rozetka
