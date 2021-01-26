@@ -31,10 +31,10 @@ public static void buckwheat() throws  IOException, JSONException{
 	//Getting URL, HTML code for parsing and extracting information such as weight,price,producer ...
 	String bkwtRozUrl="https://rozetka.com.ua/ua/art_foods_4820191590977/p47538592/characteristics/";
 	
-	String buckwheatPriceHTML="<div class=\"product-carriage__price product-carriage__price_color_red\"> 55<span class=\"product-carriage__price-symbol\">";
-	String buckwheatNameHTML="<a href=\"/ua/krupy/c4628397/strana-proizvoditelj-tovara-90098=544338/\">Україна</a>";
+	String buckwheatPriceHTML="<div class=\"product-carriage__price product-carriage__price_color_red\"> 55";
+	String buckwheatNameHTML="<span>Україна</span>";
 	String buckwheatCategoryHTML="<a href=\"/ua/krupy/c4628397/vid-225787=grechka/\">Гречка</a>";
-	String buckwheatProducerHTML="<a href=\"/ua/krupy/c4628397/strana-proizvoditelj-tovara-90098=544338/\">Україна</a>";
+	String buckwheatProducerHTML="<span>Україна</span>";
 	String buckwheatWeightHTML="<a href=\"/ua/krupy/c4628397/ves147016=751-g-1000-g/\">1 кг</a>";
 	String imgRozUr="https://i2.rozetka.ua/goods/14397645/art_foods_4820191590977_images_14397645953.jpg";
 //Extracting information by function parse() using Jsoup library,arguments of functions is html code and url of page where characteristics is:
@@ -58,11 +58,12 @@ public static void buckwheat() throws  IOException, JSONException{
 	//Buckwheat Parsing in Epicentre
 	String bkwtEpicUrl="https://epicentrk.ua/shop/krupa-grechnevaya-khutorok-yadritsya-800-g-4820211661410.html?ssh=new&gclid=CjwKCAiAo5qABhBdEiwAOtGmbvlIB8sEwG8FDjHmtRqGPJeAElRmbaMvZVnWFvEFpASheUoa-zZFgRoCPiwQAvD_BwE";
 	
-	String bkwtEpicPriceHTML="<div class=\"p-price__main\" title=\"Цена: 39.90 грн/упак.\" data-text=\"грн/упак.\">39.90 </div>";
-	String bkwtEpicNameHTML="<span class=\"p-char__value\"><span>Хуторок</span></span>";
-	String bkwtEpicCategoryHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/vid-krupa-grechnevaya/\" class=\"link link--blue link--inverted\">крупа гречана</a>";
-	String bkwtEpicProducerHTML="<span class=\"p-char__value\"><span>Україна</span></span>";
-	String bkwtEpicWeightHTML="<span class=\"p-char__value\"><span>800&nbsp;г</span></span>";
+	String bkwtEpicPriceHTML="<div class=\"p-price__main\" title=\"Цена: 39.90 грн/упак.\" data-text=\"грн/упак.\">\n"
+			+ "39.90 </div>";
+	String bkwtEpicNameHTML="<span>Хуторок</span>";
+	String bkwtEpicCategoryHTML="<a href=\"/shop/krupy-i-makaronnye-izdeliya/fs/vid-krupa-grechnevaya/\" class=\"link link--blue link--inverted\">крупа гречневая</a>";
+	String bkwtEpicProducerHTML="<span>Украина</span>";
+	String bkwtEpicWeightHTML="<span>800&nbsp;г</span>";
 	String imgEpicUrl="https://cdn.27.ua/499/61/c2/2712002_1.jpeg";
 	
 	Document bkwtEpicPriceDoc=Jsoup.parse(bkwtEpicPriceHTML,bkwtEpicUrl);
@@ -83,7 +84,8 @@ public static void buckwheat() throws  IOException, JSONException{
 	
 	String bkwtAquaUrl="https://aquamarket.ua/uk/grechka/10047-khutorok-800-g-krupa-grechana-m-u.html";
 	
-	String bkwtAquaPriceHTML="<<div class=\"product-price\">40<sup>";
+	String bkwtAquaPriceHTML="<div class=\"product-price\">\n"
+			+ "                                            40";
 	String bkwtAquaNameHTML="<td>Хуторок</td>";
 	String bkwtAquaCategoryHTML="<th colspan=\"2\">ХАРАКТЕРИСТИКИ ХУТОРОК, КРУПА ГРЕЧАНА, СМАЖЕНА, 800 Г</th>";
 	String bkwtAquaProducerHTML="<td>Україна</td>";
@@ -118,10 +120,10 @@ public static void buckwheat() throws  IOException, JSONException{
 	String bkwtEpicSecUrl="https://epicentrk.ua/ua/shop/pervotsvit-grechka-s-belymi-gribami-250-g.html";
 	
 	//Scraping last 2 sort of buckwheats
-	String bkwtEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 27 грн/шт.\" data-text=\"грн/шт.\">\r\n"
+	String bkwtEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 27 грн/шт.\" data-text=\"грн/шт.\">\n"
 			+ "27 </div>";
 	String bkwtEpicSecNameHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/brend-pervotsvit/\" class=\"link link--blue link--inverted\">Первоцвіт</a>";
-	String bkwtEpicSecCategoryHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/vid-krupa-grechnevaya/\" class=\"link link--blue link--inverted\">крупа гречана</a>";
+	String bkwtEpicSecCategoryHTML="<span>гречка с белыми грибами</span>";
 	String bkwtEpicSecProducerHTML="<span>Україна</span>";
 	String bkwtEpicSecWeightHTML="<span>250&nbsp;г</span>";
 	
@@ -142,9 +144,10 @@ public static void buckwheat() throws  IOException, JSONException{
 	
 	String bkwtAquaSecUrl="https://aquamarket.ua/uk/grechka/31537-culinaro-green-buckwheat-grechka-zelena-400-g.html";
 	
-	String bkwtAquaSecPriceHTML="<<div class=\"product-price\">40<sup>";
+	String bkwtAquaSecPriceHTML="<div class=\"product-price\">\n"
+			+ "                                            59";
 	String bkwtAquaSecNameHTML="<td>Culinaro</td>";
-	String bkwtAquaSecCategoryHTML="<td>Гречка</td>";
+	String bkwtAquaSecCategoryHTML="<th colspan=\"2\">ХАРАКТЕРИСТИКИ CULINARO, GREEN BUCKWHEAT, ГРЕЧКА ЗЕЛЕНА, 400 Г</th>";
 	String bkwtAquaSecProducerHTML="<td>Україна</td>";
 	String bkwtAquaSecWeightHTML="<td>800</td>";
 	
@@ -170,7 +173,7 @@ public static void buckwheat() throws  IOException, JSONException{
 	arrayFirst.put("name: "+buckwheatRozetka.getName());
 	arrayFirst.put("category: "+buckwheatRozetka.getCategory());
 	arrayFirst.put("producer: "+buckwheatRozetka.getProducer());
-	arrayFirst.put("weight: "+buckwheatRozetka.getResource());
+	arrayFirst.put("weight: "+buckwheatRozetka.getWeight());
 	arrayFirst.put("resource: "+bkwtRozUrl);
 	arrayFirst.put("image URL: "+imgRozUr);
 
@@ -179,7 +182,7 @@ public static void buckwheat() throws  IOException, JSONException{
 	arraySecond.put("name: "+buckwheatEpic.getName());
 	arraySecond.put("category: "+buckwheatEpic.getCategory());
 	arraySecond.put("producer: "+buckwheatEpic.getProducer());
-	arraySecond.put("weight: "+buckwheatEpic.getResource());
+	arraySecond.put("weight: "+buckwheatEpic.getWeight());
 	arraySecond.put("resource: "+bkwtEpicUrl);
 	arraySecond.put("image URL: "+imgEpicUrl);
 	
@@ -188,7 +191,7 @@ public static void buckwheat() throws  IOException, JSONException{
 	arrayThird.put("name: "+buckwheatAqua.getName());
 	arrayThird.put("category: "+buckwheatAqua.getCategory());
 	arrayThird.put("producer: "+buckwheatAqua.getProducer());
-	arrayThird.put("weight: "+buckwheatAqua.getResource());
+	arrayThird.put("weight: "+buckwheatAqua.getWeight());
 	arrayThird.put("resource: "+bkwtAquaSecUrl);
 	arrayThird.put("image URL: "+imgAquaUrl);
 	
@@ -197,7 +200,7 @@ public static void buckwheat() throws  IOException, JSONException{
 	arrayFourth.put("name: "+bkwtAquaSec.getName());
 	arrayFourth.put("category: "+bkwtAquaSec.getCategory());
 	arrayFourth.put("producer: "+bkwtAquaSec.getProducer());
-	arrayFourth.put("weight: "+bkwtAquaSec.getResource());
+	arrayFourth.put("weight: "+bkwtAquaSec.getWeight());
 	arrayFourth.put("resource: "+bkwtAquaSecUrl);
 	arrayFourth.put("image URL: "+imgAquaSecUrl);
 	
@@ -206,7 +209,7 @@ public static void buckwheat() throws  IOException, JSONException{
 	arrayFifth.put("name: "+bkwtEpicSec.getName());
 	arrayFifth.put("category: "+bkwtEpicSec.getCategory());
 	arrayFifth.put("producer: "+bkwtEpicSec.getProducer());
-	arrayFifth.put("weight: "+bkwtEpicSec.getResource());
+	arrayFifth.put("weight: "+bkwtEpicSec.getWeight());
 	arrayFifth.put("resource: "+bkwtEpicSec);
 	arrayFifth.put("image URL: "+imgEpicSecUrl);
 	
@@ -236,10 +239,10 @@ public static void wheat() throws IOException, JSONException{
 		List<Croap>wheats=new ArrayList<Croap>();
 		String wheatRozetka="https://rozetka.com.ua/ua/terra_4820015730794/p23653956/characteristics/";
 		
-		String wheatPriceHTML="<div class=\"product-carriage__price\"> 17<span class=\"product-carriage__price-symbol\">";
-		String wheatNameHTML="<a href=\"/ua/krupy/c4628397/vid-225787=pshenichnaya-krupa/\">Пшенична крупа</a>";
+		String wheatPriceHTML="<div class=\"product-carriage__price\"> 17";
+		String wheatNameHTML="<a href=\"/ua/krupy/c4628397/strana-registracii-brenda-87790=429058/\">Україна</a>";
 		String wheatCategoryHTML="<a href=\"/ua/krupy/c4628397/vid-225787=pshenichnaya-krupa/\">Пшенична крупа</a>";
-		String wheatProducerHTML="<a href=\"/ua/krupy/c4628397/strana-proizvoditelj-tovara-90098=544338/\">Україна</a>";
+		String wheatProducerHTML="<a href=\"/ua/krupy/c4628397/strana-registracii-brenda-87790=429058/\">Україна</a>";
 		String wheatWeightHTML="<a href=\"/ua/krupy/c4628397/ves147016=501-g-750-g/\">700 г</a>";
 
 
@@ -262,19 +265,19 @@ public static void wheat() throws IOException, JSONException{
 		
 	String wheatEpicUrl="https://epicentrk.ua/ua/shop/krupa-pshenichnaya-terra-bystrogo-prigotovleniya-400-g.html";
 		
-		String whtEpicPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 22.70 грн/шт.\" data-text=\"грн/шт.\">\r\n"
+		String whtEpicPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 22.70 грн/шт.\" data-text=\"грн/шт.\">\n"
 				+ "22.70 </div>";
 		String whtEpicNameHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/brend-terra/\" class=\"link link--blue link--inverted\">Терра</a>";
 		String whtEpicCategoryHTML="<span>крупа пшенична</span>";
 		String whtEpicProducerHTML="<span>Україна</span>";
-		String whtEpicWeightHTML="<span class=\"p-char__value\"><span>400&nbsp;г</span>";
+		String whtEpicWeightHTML="<span>400&nbsp;г</span>";
 
 
 		Document whtEpicPriceDoc=Jsoup.parse(whtEpicPriceHTML,wheatEpicUrl);
 		Document whtEpicNameDoc=Jsoup.parse(whtEpicNameHTML,wheatEpicUrl);
 		Document whtEpicCategoryDoc=Jsoup.parse(whtEpicCategoryHTML,wheatEpicUrl);
-		Document whtEpicWeightDoc=Jsoup.parse(whtEpicProducerHTML,wheatEpicUrl);
-		Document whtEpicProducerDoc=Jsoup.parse(whtEpicWeightHTML,wheatEpicUrl);
+		Document whtEpicWeightDoc=Jsoup.parse(whtEpicWeightHTML,wheatEpicUrl);
+		Document whtEpicProducerDoc=Jsoup.parse(whtEpicProducerHTML,wheatEpicUrl);
 
 
 		String whtEpicPrice=whtEpicPriceDoc.body().text();
@@ -288,11 +291,12 @@ public static void wheat() throws IOException, JSONException{
 		
 	String whtAquaUrl="https://aquamarket.ua/uk/pshenichna-krupa/2353-ekorod-400-g-pshenichna-krupa-arnaut.html";
 	
-	String whtAquaPriceHTML="<div class=\"product-price\">28<sup>";
+	String whtAquaPriceHTML="<div class=\"product-price\">\n"
+			+ "                                            28";
 	String whtAquaNameHTML="<td>Екород</td>";
-	String whtAquaCategoryHTML="<h1 class=\"product-name\">Екород, Крупа пшенична Арнаут, органічна, 400 г</h1>";
+	String whtAquaCategoryHTML="<th colspan=\"2\">ХАРАКТЕРИСТИКИ ЕКОРОД, КРУПА ПШЕНИЧНА АРНАУТ, ОРГАНІЧНА, 400 Г</th>";
 	String whtAquaProducerHTML="<td>Україна</td>";
-	String whtAquaWeightHTML="<td>0 - 500</td>";
+	String whtAquaWeightHTML="<td>400</td>";
 
 
 	Document whtAquaPriceDoc=Jsoup.parse(whtAquaPriceHTML,wheatEpicUrl);
@@ -313,9 +317,9 @@ Croap wheatAqua=new Croap(whtAquaPrice, whtAquaName, whtAquaCategory, whtAquaPro
 
 String whtEpicSecUrl="https://epicentrk.ua/ua/shop/krupa-pshenichnaya-sto-pudov-artek-dachka-212-g.html";
 
-String whtEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 6.80 грн/шт.\" data-text=\"грн/шт.\">\r\n"
+String whtEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 6.80 грн/шт.\" data-text=\"грн/шт.\">\n"
 		+ "6.80 </div>";
-String whtEpicSecNameHTML="<span>Артек Дачка</span>";
+String whtEpicSecNameHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/brend-sto-pudov/\" class=\"link link--blue link--inverted\">Сто пудов</a>";
 String whtEpicSecCategoryHTML="<span>крупа пшенична</span>";
 String whtEpicSecProducerHTML="<span>Україна</span>";
 String whtEpicSecWeightHTML="<span>212&nbsp;г</span>";
@@ -337,10 +341,10 @@ wheats.add(whtEpicSec);
 
 String whtAquaSecUrl="https://aquamarket.ua/uk/pshenichna-krupa/38683-avgust-800-g-krupi-pshenichni-z-tverdikh-sortiv.html";
 
-String whtAquaSecPriceHTML="<div class=\"product-price\">\r\n"
-		+ "                                                            27<sup>";
+String whtAquaSecPriceHTML="<div class=\"product-price\">\n"
+		+ "                                            27";
 String whtAquaSecNameHTML="<td>Август</td>";
-String whtAquaSecCategoryHTML="<td>Пшенична</td>";
+String whtAquaSecCategoryHTML="<th colspan=\"2\">ХАРАКТЕРИСТИКИ АВГУСТ, 800 Г, КРУПИ ПШЕНИЧНІ З ТВЕРДИХ СОРТІВ</th>";
 String whtAquaSecProducerHTML="<td>Україна</td>";
 String whtAquaSecWeightHTML="<td>800</td>";
 
@@ -434,24 +438,25 @@ public static void corn() throws JSONException, IOException {
 	String cornRozUrl="https://rozetka.com.ua/ua/art_foods_4820191590892/p47649056/characteristics/"; 
 	String cornAquaUrl="https://aquamarket.ua/uk/kukurudzyana-krupa/38684-avgust-800-g-krupa-kukurudzyana.html";
 	
-	String cornEpicPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 22.70 грн/шт.\" data-text=\"грн/шт.\">\r\n"
+	String cornEpicPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 22.70 грн/шт.\" data-text=\"грн/шт.\">\n"
 			+ "22.70 </div>";
 	String cornEpicNameHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/brend-terra/\" class=\"link link--blue link--inverted\">Терра</a>";
 	String cornEpicCategoryHTML="<span>крупа кукурудзяна</span>";
 	String cornEpicProducerHTML="<span>Україна</span>";
-	String cornEpicWeightHTML="<span class=\"p-char__value\"><span>400&nbsp;г</span>";
+	String cornEpicWeightHTML="<span>400&nbsp;г</span>";
 	String cornEpicResourceHTML=cornEpicUrl;
 	
 	String cornRozPriceHTML="<div class=\"product-carriage__price\"> 20";
 	String cornRozNameHTML="<span>Україна</span>";
 	String cornRozCategoryHTML="<a href=\"/ua/krupy/c4628397/vid-225787=kukuruznaya-krupa/\">Кукурудзяна крупа</a>";
-	String cornRozProducerHTML="<a href=\"/ua/krupy/c4628397/strana-proizvoditelj-tovara-90098=544338/\">Україна</a>";
+	String cornRozProducerHTML="<span>Україна</span>";
 	String cornRozWeightHTML="<a href=\"/ua/krupy/c4628397/ves147016=501-g-750-g/\">500 г</a>";
 	String cornRozResourceHTML=cornRozUrl;
 	
-	String cornAquaPriceHTML="<div class=\"product-price\">15<sup>";
+	String cornAquaPriceHTML="<div class=\"product-price\">\n"
+			+ "                                            15";
 	String cornAquaNameHTML="<td>Август</td>";
-	String cornAquaCategoryHTML="<td>Кукурудзяна</td>";
+	String cornAquaCategoryHTML="<th colspan=\"2\">ХАРАКТЕРИСТИКИ АВГУСТ, 800 Г, КРУПА КУКУРУДЗЯНА</th>";
 	String cornAquaProducerHTML="<td>Україна</td>";
 	String cornAquaWeightHTML="<td>800</td>";
 	String cornAquaResourceHTML=cornAquaUrl;
@@ -505,8 +510,8 @@ public static void corn() throws JSONException, IOException {
 	
 	String cornEpicSecUrl="https://epicentrk.ua/ua/shop/krupa-kukuruznaya-sto-pudov-750-g.html";
 
-	String cornEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 13 грн/упак.\" data-text=\"грн/упак.\">\r\n"
-			+ "13 </div>";
+	String cornEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 13.30 грн/упак.\" data-text=\"грн/упак.\">\n"
+			+ "13.30 </div>";
 	String cornEpicSecNameHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/brend-sto-pudov/\" class=\"link link--blue link--inverted\">Сто пудов</a>";
 	String cornEpicSecCategoryHTML="<span>крупа кукурудзяна</span>";
 	String cornEpicSecProducerHTML="<span>Україна</span>";
@@ -532,7 +537,7 @@ public static void corn() throws JSONException, IOException {
 	String cornAquaSecPriceHTML="<div class=\"product-price\">\r\n"
 			+ "                                                            23<sup>";
 	String cornAquaSecNameHTML="<td>Сквирянка</td>";
-	String cornAquaSecCategoryHTML="<td>Кукурудзяна</td>";
+	String cornAquaSecCategoryHTML="<th colspan=\"2\">ХАРАКТЕРИСТИКИ СКВІРЯНКА, 800 Г, КРУПА КУКУРУДЗЯНА ШЛІФОВАНА №5</th>";
 	String cornAquaSecProducerHTML="<td>Україна</td>";
 	String cornAquaSecWeightHTML="<td>800</td>";
 
@@ -619,7 +624,7 @@ public static void rice() throws JSONException, IOException {
 	String riceRozUrl="https://rozetka.com.ua/ua/pere_4820191590472/p47561880/characteristics/"; 
 	String riceAquaUrl="https://aquamarket.ua/uk/ris/14890-ris-scotti-skotti-arborio-dlya-rizotto-500-g.html";
 	
-	String riceEpicPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 26.90 грн/упак.\" data-text=\"грн/упак.\">\r\n"
+	String riceEpicPriceHTML="<div class=\"p-price__main\" title=\"Р¦С–РЅР°: 26.90 РіСЂРЅ/СѓРїР°Рє.\" data-text=\"РіСЂРЅ/СѓРїР°Рє.\">\r\n"
 			+ "26.90 </div>";
 	String riceEpicNameHTML="<span>Хуторок</span>";
 	String riceEpicCategoryHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/vid-ris/\" class=\"link link--blue link--inverted\">рис</a>";
@@ -630,7 +635,7 @@ public static void rice() throws JSONException, IOException {
 	String riceRozPriceHTML="<div class=\"product-carriage__price\"> 117";
 	String riceRozNameHTML="<a href=\"/ua/krupy/c4628397/tip170414=basmati/\">Басматі</a>";
 	String riceRozCategoryHTML="<a href=\"/ua/krupy/c4628397/vid-225787=ris/\">Рис</a>";
-	String riceRozProducerHTML="<a href=\"/ua/krupy/c4628397/strana-registracii-brenda-87790=429058/\">Україна</a>";
+	String riceRozProducerHTML="<span>Індія</span>";
 	String riceRozWeightHTML="<a href=\"/ua/krupy/c4628397/ves147016=751-g-1000-g/\">800 г</a>";
 	String riceRozResourceHTML=riceRozUrl;
 	
@@ -691,7 +696,7 @@ public static void rice() throws JSONException, IOException {
 	
 	String riceEpicSecUrl="https://epicentrk.ua/ua/shop/ris-sto-pudov-dlya-sushi-400-g.html";
 
-	String riceEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 24 грн/шт.\" data-text=\"грн/шт.\">\r\n"
+	String riceEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Р¦С–РЅР°: 24 РіСЂРЅ/С€С‚.\" data-text=\"РіСЂРЅ/С€С‚.\">\r\n"
 			+ "24 </div>";
 	String riceEpicSecNameHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/brend-sto-pudov/\" class=\"link link--blue link--inverted\">Сто пудов</a>";
 	String riceEpicSecCategoryHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/vid-ris/\" class=\"link link--blue link--inverted\">рис</a>";
@@ -808,7 +813,7 @@ public static void barley() throws JSONException, IOException {
 	String barleyRozUrl="https://rozetka.com.ua/ua/82804665/p82804665/characteristics/"; 
 	String barleyAquaUrl="https://aquamarket.ua/uk/yachna-krupa/38682-avgust-800-g-krupa-yachna.html";
 	
-	String barleyEpicPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 12 грн/упак.\" data-text=\"грн/упак.\">\r\n"
+	String barleyEpicPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 12 грн/упак.\" data-text=\"грн/упак.\">\n"
 			+ "12 </div>";
 	String barleyEpicNameHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/brend-foodsi/\" class=\"link link--blue link--inverted\">Foodsi</a>";
 	String barleyEpicCategoryHTML="<span>крупа ячмінна</span>";
@@ -880,7 +885,7 @@ public static void barley() throws JSONException, IOException {
 	
 	String barleyEpicSecUrl="https://epicentrk.ua/ua/shop/krupa-yachnevaya-terra-bystrogo-prigotovleniya-400-g.html";
 
-	String barleyEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 18.70 грн/шт.\" data-text=\"грн/шт.\">\r\n"
+	String barleyEpicSecPriceHTML="<div class=\"p-price__main\" title=\"Ціна: 18.70 грн/шт.\" data-text=\"грн/шт.\">\n"
 			+ "18.70 </div>";
 	String barleyEpicSecNameHTML="<a href=\"/ua/shop/krupy-i-makaronnye-izdeliya/fs/brend-terra/\" class=\"link link--blue link--inverted\">Терра</a>";
 	String barleyEpicSecCategoryHTML="<span>крупа ячмінна</span>";
@@ -904,8 +909,8 @@ public static void barley() throws JSONException, IOException {
 
 	String barleyAquaSecUrl="https://aquamarket.ua/uk/yachna-krupa/44800-kozub-500-g-krupa-yachna-organichna.html";
 
-	String barleyAquaSecPriceHTML="<div class=\"product-price\">\r\n"
-			+ "                                                            36<sup>";
+	String barleyAquaSecPriceHTML="<div class=\"product-price\">\n"
+			+ "                                            36";
 	String barleyAquaSecNameHTML="<td>Козуб</td>";
 	String barleyAquaSecCategoryHTML="<td>Ячна</td>";
 	String barleyAquaSecProducerHTML=" <td>Україна</td>";

@@ -7,6 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="src/jsoup-1.13.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Eugene/Desktop/java-json.jar/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Eugene/eclipse-workspace/java-json.jar/java-json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
